@@ -3,6 +3,8 @@ const { User } = require("../models");
 
 const createUser = async (req, res) => {
   const { firstName, lastName, email } = req.body;
+  console.log(req.body);
+  console.log(firstName, lastName, email);
   try {
     if (!firstName || !lastName || !email)
       throw new Error("Each field is required");
@@ -64,17 +66,8 @@ const updateUser = async (req, res) => {
   }
   if (email) {
     //   const user = await User.findOne({ where: { uuid } });
-    const isEmailInDb = await User.findOne({ where: { email } });
-    const isUserAuthorized = isEmailInDb
-      ? user.email === email
-        ? false
-        : true
-      : false;
-    if (email && isUserAuthorized) {
-      user.email = email;
-    } else if (!isUserAuthorized) {
-      res.status(401).json({ message: "Email already in use" });
-    }
+
+    user.email = email;
   }
 
   try {
