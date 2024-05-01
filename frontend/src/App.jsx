@@ -41,13 +41,13 @@ function App() {
                 allUser.map((el) => {
                   return (
                     <tr key={el.uuid} className="h-[2.1rem] overflow-hidden">
-                      <td className="text-center capitalize font-semibold border border-gray-500 ">
+                      <td className="text-center  font-semibold border border-gray-500 ">
                         {el.uuid}
                       </td>
-                      <td className="text-center capitalize font-semibold border border-gray-500 ">
+                      <td className="text-center  font-semibold border border-gray-500 ">
                         {el.firstName}
                       </td>
-                      <td className="text-center capitalize font-semibold border border-gray-500 ">
+                      <td className="text-center  font-semibold border border-gray-500 ">
                         {el.lastName}
                       </td>
                       <td className="text-center  font-semibold border border-gray-500 ">
