@@ -1,10 +1,16 @@
-const { sequelize } = require("./models");
+const { Sequelize } = require("./models");
 const cors = require("cors");
 const path = require("path");
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
+const sequelize = new Sequelize({
+  dialect: "postgres",
+  database: process.env.DB_NAME,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+});
 const userRouter = require("./routes/user");
 app.use(express.json());
 app.use(cors());
